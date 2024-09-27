@@ -75,6 +75,7 @@ black = "black minification_station"
 format = { composite = ["isort", "black"] }
 fix = "ruff --fix minification_station"
 ruff = "ruff check minification_station"
+ruff_preview = "ruff check --preview --diff --unsafe-fixes minification_station"
 unsafe_fix = "ruff check --fix --unsafe-fixes minification_station"
 pyright = "pyright minification_station"
 mypy = "mypy minification_station --strict"

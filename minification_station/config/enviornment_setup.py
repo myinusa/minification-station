@@ -38,4 +38,4 @@ def initialize_application() -> None:
     logging.debug("Application initialized.")
 
 
-current_date = get_current_date_formatted(ISO_DATE_FORMAT)
+current_date: str = get_current_date_formatted(ISO_DATE_FORMAT)

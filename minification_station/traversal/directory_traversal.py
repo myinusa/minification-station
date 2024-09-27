@@ -19,11 +19,11 @@ class DirectoryTraversal:
         ignore_folders: list[str] = DEFAULT_IGNORE_FOLDERS,
         file_size_limit: int = DEFAULT_FILE_SIZE_LIMIT,
     ) -> None:
-        self.directory = directory
-        self.file_extension = file_extension
-        self.ignore_files = ignore_files
-        self.ignore_folders = ignore_folders
-        self.file_size_limit = file_size_limit
+        self.directory: str = directory
+        self.file_extension: str = file_extension
+        self.ignore_files: list[str] = ignore_files
+        self.ignore_folders: list[str] = ignore_folders
+        self.file_size_limit: int = file_size_limit
 
     @log_exceptions
     @log_function_call
