@@ -10,6 +10,7 @@ def log_progress(index: int, total: int, message: str) -> None:
     """Log progress with index and total count."""
     logging.info(f"[{index}/{total}] {message}")
 
+
 def main() -> None:
     args = get_parsed_args()
     initialize_application()
