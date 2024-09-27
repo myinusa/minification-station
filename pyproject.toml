@@ -1,0 +1,85 @@
+[tool.poetry]
+name = "minification-station"
+version = "0.1.0"
+description = ""
+authors = ["myinusa"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+minification_station = "minification_station.main:main"
+
+[tool.poetry.group.dev.dependencies]
+# Code formatter for consistent style
+black = "^24.8.0"
+# Better exception handling for debugging
+better-exceptions = "^0.3.3"
+# Fast linting and code analysis tool
+ruff = "^0.6.8"
+# Import sorting tool
+isort = "^5.13.2"
+# Documentation generator
+pdoc = "^14.7.0"
+# Type checker for Python
+pyright = "^1.1.382.post1"
+# Deep comparison library for Python
+deepdiff = "^8.0.1"
+# HTTP library for making requests
+requests = "^2.32.3"
+# Mocking library for requests
+requests-mock = "^1.12.1"
+# Syntax highlighting library
+pygments = "^2.18.0"
+# Tool for finding unused code
+vulture = "^2.12"
+# Spell checker for source code
+codespell = "^2.3.0"
+
+[tool.poetry.group.test.dependencies]
+# Testing framework for Python
+pytest = "^8.3.3"
+# Coverage reporting for tests
+pytest-cov = "^5.0.0"
+# Mocking library for pytest
+pytest-mock = "^3.14.0"
+# Randomly order tests for better coverage
+pytest-randomly = "^3.15.0"
+# JSON reporting for pytest results
+pytest-json-report = "^1.5.0"
+# Testing tool for documentation
+xdoctest = "^1.2.0"
+
+[tool.poetry.group.lint.dependencies]
+# Style guide enforcement tool
+flake8 = "^7.1.1"
+# Static type checker for Python
+mypy = "^1.11.2"
+# Security analysis tool for Python
+bandit = "^1.7.10"
+# Code analysis tool for Python
+pylint = "^3.3.1"
+# Language server for Ruff
+ruff-lsp = "^0.0.57"
+
+# PDM example
+[tool.pdm.scripts]
+isort = "isort minification_station"
+black = "black minification_station"
+format = {composite = ["isort", "black"]}
+fix = "ruff --fix minification_station"
+ruff = "ruff check minification_station"
+unsafe_fix = "ruff check --fix --unsafe-fixes minification_station"
+pyright = "pyright minification_station"
+mypy = "mypy minification_station"
+pylint = "pylint minification_station"
+vulture = "vulture minification_station --min-confidence 100"
+security-check = "bandit -r minification_station"
+lint = {composite = ["vulture", "ruff", "format"]}
+typecheck = {composite = ["pyright", "mypy"]}
