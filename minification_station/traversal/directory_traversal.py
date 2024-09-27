@@ -1,6 +1,5 @@
 import logging
 import os
-from typing import List
 
 from minification_station.config.constants import (
     DEFAULT_FILE_EXTENSION,
@@ -16,10 +15,10 @@ class DirectoryTraversal:
         self,
         directory: str,
         file_extension: str = DEFAULT_FILE_EXTENSION,
-        ignore_files: List[str] = DEFAULT_IGNORE_FILES,
-        ignore_folders: List[str] = DEFAULT_IGNORE_FOLDERS,
+        ignore_files: list[str] = DEFAULT_IGNORE_FILES,
+        ignore_folders: list[str] = DEFAULT_IGNORE_FOLDERS,
         file_size_limit: int = DEFAULT_FILE_SIZE_LIMIT,
-    ):
+    ) -> None:
         self.directory = directory
         self.file_extension = file_extension
         self.ignore_files = ignore_files
@@ -28,7 +27,7 @@ class DirectoryTraversal:
 
     @log_exceptions
     @log_function_call
-    def get_files(self) -> List[str]:
+    def get_files(self) -> list[str]:
         file_paths = []
         for root, dirs, files in os.walk(self.directory):
             # Ignore specified folders
