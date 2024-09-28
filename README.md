@@ -25,6 +25,8 @@ To use Minification Station, follow these steps:
 3. Run the script using Poetry: `poetry run minification_station -d <DIRECTORY>`.
 4. The script will process all files in the specified directory and write the combined content to an output file named after the current date and time, appended with the directory's base name.
 
+<img src="./docs/output.gif" width="700" />
+
 ### Command Line Arguments
 - `-d`, `--directory`: Specifies the directory to traverse (required).
 
