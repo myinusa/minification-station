@@ -10,19 +10,17 @@ LOG_FILE = "main.log"
 LOG_PATH = Path("logs")
 LOG_PATH.mkdir(parents=True, exist_ok=True)
 LOG_PATH = LOG_PATH / LOG_FILE
+OUTPUT_PATH = Path("output")
 
-# load_dotenv()
-# MAIN_URL = os.getenv("MAIN_URL", "")
-# Date format
-ISO_DATE_FORMAT = "%y%m%dT%H:%M"
+ISO_DATE_FORMAT = "%y%m%dT%H-%M"
 
 
 def ensure_directory_exists(path: Path) -> None:
-    """Ensure that the directory for the given path exists, exit otherwise."""
+    """Ensure that the directory for the given path exists; create it if it does not."""
     if not path.exists():
-        logging.critical(f"Directory {path.resolve()} does not exist.")
-        sys.exit(1)
-
+        logging.info(f"Directory {path.resolve()} does not exist. Creating it.")
+        path.mkdir(parents=True, exist_ok=True)
+        logging.info(f"Directory {path.resolve()} created.")
 
 def get_current_date_formatted(_format: str) -> str:
     """Return the current date formatted according to the given format string."""
@@ -36,6 +34,13 @@ def initialize_application() -> None:
     setup_logging(LOG_PATH, log_level)
     logging.debug("Initializing application...")
     logging.debug("Application initialized.")
+    ensure_directory_exists(OUTPUT_PATH)
 
+def validate_directory(directory: str) -> None:
+    """Validate that the provided directory exists and is a directory."""
+    if not os.path.isdir(directory):
+        logging.error(f"The directory '{directory}' is not valid.")
+        msg = f"The directory '{directory}' is not valid."
+        raise ValueError(msg)
 
 current_date: str = get_current_date_formatted(ISO_DATE_FORMAT)
