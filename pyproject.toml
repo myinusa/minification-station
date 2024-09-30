@@ -1,9 +1,36 @@
 [tool.poetry]
 name = "minification-station"
-version = "0.1.0"
-description = ""
+version = "0.1.2"
+description = "Designed to process and combine multiple files within a specified directory into a single output file."
 authors = ["myinusa"]
 readme = "README.md"
+homepage = "https://github.com/myinusa/minification-station"
+repository = "https://github.com/myinusa/minification-station"
+documentation = "https://github.com/myinusa/minification-station/blob/main/README.md"
+keywords = [
+  "automation",
+  "file processing",
+  "minification",
+  "text processing",
+]
+license = "MIT"
+classifiers = [
+  "Environment :: Console",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3 :: Only",
+]
+
+[tool.poetry.urls]
+Repository = "https://github.com/myinusa/minification-station"
+Documentation = "https://github.com/myinusa/minification-station/blob/main/README.md"
+Changelog = "https://github.com/myinusa/minification-station/blob/main/CHANGELOG.md"
+
 
 [tool.poetry.dependencies]
 python = "^3.10"

@@ -30,17 +30,18 @@ def main() -> None:
     initialize_application()
 
     directory = args.directory
+    program_lang = args.program_lang  # Assuming this argument is added to the CLI
     validate_directory(directory)
-    output_file: str = current_date + "-" +  os.path.basename(directory) + ".txt"
+    output_file: str = current_date + "-" + os.path.basename(directory) + ".txt"
     output_path: Path = OUTPUT_PATH / output_file
 
     logging.info(
-        f"Starting the script with directory: {directory} and output file: {output_file}",
+        f"Starting the script with directory: {directory}, output file: {output_file}, and language: {program_lang}",
     )
     sleep(2)
 
     try:
-        traversal = DirectoryTraversal(directory=directory)
+        traversal = DirectoryTraversal(directory=directory, program_lang=program_lang)
         file_paths = traversal.get_files()
         total_files = len(file_paths)
         logging.info(f"Total number of files to process: {total_files}")

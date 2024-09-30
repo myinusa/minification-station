@@ -1,5 +1,24 @@
 # Constants
-DEFAULT_FILE_EXTENSION = ".py"
-DEFAULT_IGNORE_FILES: list[str] = [".python-version"]
-DEFAULT_IGNORE_FOLDERS: list[str] = [".git", ".vscode", "venv", ".github", "__pycache__", "logs"]
-DEFAULT_FILE_SIZE_LIMIT = 10 * 1024 * 1024  # 10 MB
+LANGUAGE_CONSTANTS = {
+    "python": {
+        "file_extension": ".py",
+        "ignore_files": [".python-version"],
+        "ignore_folders": [".git", ".vscode", "venv", ".github", "__pycache__", "logs"],
+        "file_size_limit": 10 * 1024 * 1024,  # 10 MB
+    },
+    "csharp": {
+        "file_extension": ".cs",
+        "ignore_files": ["*.dll", "*.exe"],
+        "ignore_folders": [".git", ".vs", "bin", "obj", ".vscode", ".github"],
+        "file_size_limit": 20 * 1024 * 1024,  # 20 MB
+    },
+    # Add more languages as needed
+    # "javascript": {
+    #     "file_extension": ".js",
+    #     "ignore_files": [],
+    #     "ignore_folders": [],
+    #     "file_size_limit": 5 * 1024 * 1024,  # 5 MB
+    # },
+}
+
+DEFAULT_LANGUAGE = "python"
