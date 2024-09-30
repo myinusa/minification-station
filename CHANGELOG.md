@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.1.0](https://github.com/myinusa/minification-station/compare/v1.0.0...v1.1.0) (2024-09-30)
+
+
+### Features
+
+* **constants.py:** add support for multiple programming languages by introducing `LANGUAGE_CONSTANTS`. ([cdc9ddc](https://github.com/myinusa/minification-station/commit/cdc9ddc07542788f17cbebae1b8bc8a65b743050))
+* **main.py:** add handling for the new `--program_lang` argument in script initialization. ([cdc9ddc](https://github.com/myinusa/minification-station/commit/cdc9ddc07542788f17cbebae1b8bc8a65b743050))
+* **traversal/directory_traversal.py:** update constructor to accept and use `program_lang` parameter from constants. ([cdc9ddc](https://github.com/myinusa/minification-station/commit/cdc9ddc07542788f17cbebae1b8bc8a65b743050))
+
 ## 1.0.0 (2024-09-28)
 
 
