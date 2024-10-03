@@ -1,13 +1,16 @@
- # Minification Station
+# Minification Station
 
 Minification Station is a Python script designed to process and combine multiple files within a specified directory into a single output file. This tool is particularly useful for reducing the size of large codebases or collections of text files by removing unnecessary line breaks, comments, etc.
 
 ## Table of Contents
+
 - [Minification Station](#minification-station)
   - [Table of Contents](#table-of-contents)
   - [Description](#description)
   - [Usage](#usage)
-    - [Command Line Arguments](#command-line-arguments)
+    - [Example Command](#example-command)
+    - [Environment Variables](#environment-variables)
+    - [Command-Line Arguments](#command-line-arguments)
   - [FAQ](#faq)
   - [Resources](#resources)
   - [Configuration](#configuration)
@@ -16,10 +19,13 @@ Minification Station is a Python script designed to process and combine multiple
   - [Considerations](#considerations)
 
 ## Description
+
 Minification Station is a versatile tool that processes files in a specified directory, combining them into a single output file. It supports various configurations such as specifying the directory to traverse, file extensions to include, and folders to ignore during traversal. The script logs progress and errors, ensuring transparency and ease of debugging.
 
 ## Usage
+
 To use Minification Station, follow these steps:
+
 1. Install the required dependencies by running `poetry install`.
 2. Run Poetry shell: `poetry shell`.
 3. Run the script using Poetry: `poetry run minification_station -d <DIRECTORY>`.
@@ -27,10 +33,26 @@ To use Minification Station, follow these steps:
 
 <img src="./docs/output.gif" width="700" />
 
-### Command Line Arguments
-- `-d`, `--directory`: Specifies the directory to traverse (required).
+
+### Example Command
+```sh
+python3 -m minification_station.main -d /path/to/directory --program_lang python
+```
+
+### Environment Variables
+
+- `OUTPUT_PATH`: Path where the output file will be saved. Default is "output".
+
+### Command-Line Arguments
+
+- `-d, --directory`: Directory to traverse. Required.
+- `--program_lang`: Programming language (default: python). Optional.
+- `-o, --output`: Output file path. Optional.
 
 ## FAQ
+
+**Q**: How do I specify different languages for processing? A: Use the `--program_lang` argument followed by the language name, e.g., `python`, `csharp`.
+
 **Q: Can I specify different file extensions or ignore certain files during traversal?**
 A: Yes, you can customize these settings by modifying the script accordingly. Refer to the configuration section for more details on how to modify these parameters.
 
@@ -38,18 +60,22 @@ A: Yes, you can customize these settings by modifying the script accordingly. Re
 A: Logs are written to a file named `main.log` in the 'logs' directory. You can also view real-time updates via console output if you prefer.
 
 ## Resources
+
 - [Python Documentation](https://docs.python.org/3/)
 - [tqdm Library](https://pypi.org/project/tqdm/)
 - [Logging in Python](https://docs.python.org/3/library/logging.html)
 
 ## Configuration
+
 You can configure the script by modifying various parameters in the `config` directory:
+
 - **constants.py**: Contains default settings for file extensions, ignored files and folders, and size limits.
 - **args.py**: Defines command line arguments used to run the script.
 - **environment_setup.py**: Includes functions to initialize application environment, logging setup, and ensure output directories exist.
 - **logging/setup_logging.py**: Contains functions to set up logging configuration with options for file rotation, console output, and error handling.
 
 ## Features
+
 - Traverse specified directory recursively.
 - Include or exclude files based on extensions.
 - Ignore specific folders during traversal.
@@ -57,12 +83,15 @@ You can configure the script by modifying various parameters in the `config` dir
 - Logging progress and errors for easy debugging.
 
 ## Topics
+
 - File Processing
 - Directory Traversal
 - Logging in Python
 - Command Line Interface (CLI)
 
 ## Considerations
+
 <!-- - Ensure the specified directory exists before running the script. -->
+
 - Be aware of the size limits to avoid processing files that are too large.
 - Customize configurations as needed for different environments or specific use cases.
