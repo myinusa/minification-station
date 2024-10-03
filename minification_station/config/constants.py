@@ -12,13 +12,18 @@ LANGUAGE_CONSTANTS = {
         "ignore_folders": [".git", ".vs", "bin", "obj", ".vscode", ".github"],
         "file_size_limit": 20 * 1024 * 1024,  # 20 MB
     },
-    # Add more languages as needed
-    # "javascript": {
-    #     "file_extension": ".js",
-    #     "ignore_files": [],
-    #     "ignore_folders": [],
-    #     "file_size_limit": 5 * 1024 * 1024,  # 5 MB
-    # },
+    "javascript": {
+        "file_extension": ".js",
+        "ignore_files": [],
+        "ignore_folders": [],
+        "file_size_limit": 5 * 1024 * 1024,  # 5 MB
+    },
+    "typescript": {
+        "file_extension": ".ts",
+        "ignore_files": [],
+        "ignore_folders": [],
+        "file_size_limit": 10 * 1024 * 1024,  # 10 MB
+    },
 }
 
 DEFAULT_LANGUAGE = "python"

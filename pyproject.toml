@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "minification-station"
-version = "0.1.2"
+version = "0.1.3"
 description = "Designed to process and combine multiple files within a specified directory into a single output file."
 authors = ["myinusa"]
 readme = "README.md"
