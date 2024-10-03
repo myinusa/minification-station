@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/myinusa/minification-station/compare/v1.1.0...v1.2.0) (2024-10-03)
+
+
+### Features
+
+* filter files by programming language ([03c7188](https://github.com/myinusa/minification-station/commit/03c7188d10f1edb60da5c2932ce17f6ec3db5161))
+
 ## [1.1.0](https://github.com/myinusa/minification-station/compare/v1.0.0...v1.1.0) (2024-09-30)
 
 
